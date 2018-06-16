@@ -5,16 +5,6 @@ Author: Oscar Rovira
 import time
 from math import *
 
-map = [[0, 1, 0, 0, 0, 0],
-       [0, 1, 0, 0, 0, 0],
-       [0, 1, 0, 0, 0, 0],
-       [0, 1, 0, 0, 0, 0],
-       [0, 0, 0, 0, 0, 0]]
-
-goal1 = [len(map[0])-1, len(map)-1]
-goal2 = [3, 2]
-
-
 def heuristic(map_grid, goal, method = 'Manhattan', show=False):
     '''
     Function to create heuristic map from given grid.
@@ -50,5 +40,5 @@ def heuristic(map_grid, goal, method = 'Manhattan', show=False):
             print(row)
         print('Using the {} method'.format(method))
         print('--- {0:.10f} seconds ---'.format(run_time))
-        
+
     return heuristic

@@ -16,7 +16,7 @@ map = [[0, 1, 0, 0, 0, 0],
 #Define where you will start from the map and your goal
 start = [0,0]
 goal1 = [len(map[0])-1, len(map)-1]
-goal2 = [5, 0]
+goal2 = [4, 2]
 goal = goal2
 #Define the possible directions the robot can move
 dirs = [[-1, 0 ], # go up
@@ -27,7 +27,7 @@ dirs = [[-1, 0 ], # go up
 dirs_name = ['^', '<', 'v', '>']
 
 #Create heuristic map
-heuristic = heuristic(map, goal, method='Manhattan', show=False)
+heuristic = heuristic(map, goal, method='Manhattan', show=True)
 # Output example:
 # [6, 5, 4, 3, 2, 3]
 # [5, 4, 3, 2, 1, 2]
@@ -80,3 +80,10 @@ while(not_finished):
         print('Finished!')
         for row in expansion_grid:
             print(row)
+
+#Output example
+# [0, -1, -1, -1, -1, -1]
+# [1, -1, -1, -1, -1, -1]
+# [2, -1,  8,  9,'*', -1]
+# [3, -1,  7, -1, -1, -1]
+# [4,  5,  6, -1, -1, -1]
