@@ -27,7 +27,7 @@ dirs = [[-1, 0 ], # go up
 dirs_name = ['^', '<', 'v', '>']
 
 #Create heuristic map
-heuristic = heuristic(map, goal, method='Manhattan', show=True)
+heuristic = heuristic(map, goal, method='Manhattan', show=False)
 # Output example:
 # [6, 5, 4, 3, 2, 3]
 # [5, 4, 3, 2, 1, 2]
@@ -67,7 +67,7 @@ while(not_finished):
         if blocked == False and next_node_pos not in been_there:
             #Check the cost of this step
             cost = heuristic[next_node_pos[1]][next_node_pos[0]]
-            #cost = step + cost
+            cost = step + cost
             possible_dirs_cost.append(cost)
             possible_dirs_node.append(next_node_pos)
 
