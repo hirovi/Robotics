@@ -5,7 +5,7 @@ Author: Oscar Rovira
 import time
 from math import *
 
-def heuristic(map_grid, goal, method = 'Manhattan', show=False):
+def heuristic_grid(map_grid, goal, method = 'Manhattan', show=False):
     '''
     Function to create heuristic map from given grid.
     It will compute the plain distance values (only takes into account distance cost)
@@ -41,4 +41,17 @@ def heuristic(map_grid, goal, method = 'Manhattan', show=False):
         print('Using the {} method'.format(method))
         print('--- {0:.10f} seconds ---'.format(run_time))
 
-    return heuristic
+    return heuristic_grid
+
+
+def heuristic_node(x, y, goal, method = 'Manhattan'):
+    '''
+    Function to calculate the distance from the current node to the goal
+    '''
+    dx = goal[0] - x
+    dy = goal[1] - y
+
+    if method=='Manhattan':
+        return abs(dx) + abs(dy)
+    elif method=='Euclidean':
+        return sqrt(dx*dx + dy*dy)
