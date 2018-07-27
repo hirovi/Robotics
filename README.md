@@ -1,2 +1,2 @@
-# cool_algorithms
+Algorithms
 Repo with algorithms used in robotics.
